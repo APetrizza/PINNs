@@ -23,5 +23,16 @@ Models a 2D blast wave propagation using a Parametric PINN.
 Solves the Navier-Stokes equations for fluid dynamics using the Taylor-Green Vortex benchmark.
 - **Features:** 3D Collocation ($x,y,t$), enforces Continuity and Momentum conservation.
 - **Result:** Captures the accurate decay of the 2D velocity magnitude field.
+
+### 5. [3D Parametric Heat Surrogate (HPC)](./PINN-3D-Heat-HPC) ☄️
+Solves the 3D transient heat equation acting as a parametric surrogate solver for thermal diffusivity ($\alpha$).
+- **Features:** 5D Domain Sampling, Multi-GPU `DataParallel` architecture, Inference-only execution from `.pth` weights.
+- **Result:** Split-screen cross-section analysis ($Z=0$) comparing ceramic vs metallic thermal diffusion.
+
+### 6. [Parametric Navier-Stokes: Oseen-Lamb Vortex](./PINN-Parametric-Vortex) 🌪️
+Acts as a Parametric Surrogate Model to solve the 2D Incompressible Navier-Stokes equations for a decaying vortex.
+- **Features:** 5D Domain Sampling ($x,y,t,R,U_0$), Exact Vorticity $\omega$ computation using `torch.autograd`.
+- **Result:** Captures vortex advection and dissipation across different environmental parameters.
+
 ---
 *More physics models coming soon...*
